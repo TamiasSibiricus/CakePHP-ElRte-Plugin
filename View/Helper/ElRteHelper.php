@@ -37,13 +37,13 @@ class ElRteHelper extends Helper
 
     public function beforeRender() {
         //load editor
-	    @$this->Html->css("/el_rte/css/elrte.min", null, array('inline' => false));
-        @$this->Html->script("/el_rte/js/elrte.full", null, array('inline' => false));
-	    @$this->Html->script("/el_rte/js/i18n/elrte.".$this->configs['lang'], null, array('inline' => false));
+	    $this->Html->css("/el_rte/css/elrte.min", null, array('inline' => false));
+        $this->Html->script("/el_rte/js/elrte.full", array('inline' => false));
+	    $this->Html->script("/el_rte/js/i18n/elrte.".$this->configs['lang'], array('inline' => false));
 		//load finder
-	    @$this->Html->css("/el_rte/css/elfinder.min", null, array('inline' => false));
-        @$this->Html->script("/el_rte/js/elfinder.min", null, array('inline' => false));
-	    @$this->Html->script("/el_rte/js/i18n/elfinder.".$this->configs['lang'], null, array('inline' => false));
+	    $this->Html->css("/el_rte/css/elfinder.min", null, array('inline' => false));
+        $this->Html->script("/el_rte/js/elfinder.min", array('inline' => false));
+	    $this->Html->script("/el_rte/js/i18n/elfinder.".$this->configs['lang'], array('inline' => false));
     }
      
     public function render($fieldName, $options = array()){
