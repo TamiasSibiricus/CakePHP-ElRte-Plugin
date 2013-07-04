@@ -36,7 +36,7 @@ class ElRteHelper extends Helper
 		$this->configs['sitebaseURL'] = 'http://'.$_SERVER['SERVER_NAME'].Router::url('/');
 	}
 
-	public function afterRender(){
+	public function afterRender($viewFile){
 		if (!empty($this->fields_count)){
 		//load editor
 		$this->Html->css("ElRte.elrte.min", null, array('inline' => false));
@@ -111,5 +111,5 @@ class ElRteHelper extends Helper
         ";
 		$this->fields_count = $this->fields_count + 1;
 	    $this->Html->scriptBlock($js, array("inline"=> false));
-    }  
+    }
 }
